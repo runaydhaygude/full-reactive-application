@@ -1,7 +1,7 @@
-FROM openjdk:11 AS builder
-COPY docker /usr/src/reactive-backend
+FROM  maven:3.8.1-jdk-11 AS builder
+COPY docker /usr/src/reactive-backend-1
 WORKDIR /usr/src/reactive-backend
-RUN ./mvnw clean package
+RUN ./mvnw.cmd clean package
 
 FROM openjdk:11
 COPY --from=builder /usr/src/reactive-backend/target/reactive-web-1.0.0-SNAPSHOT.jar /usr/src/reactive-backend/

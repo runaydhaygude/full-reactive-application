@@ -14,7 +14,7 @@ services:
   spring-boot-reactive:
     build:
       context: ..
-      dockerfile: ../Dockerfile-backend
+      dockerfile: Dockerfile-backend
     image: spring-boot-reactive-web-tpd
     environment:
       # Overrides the host in the Spring Boot application to use the Docker's hostname
@@ -27,7 +27,7 @@ services:
   angular-reactive:
     build:
       context: ../angular-reactive
-      dockerfile: ../angular-reactive/Dockerfile-frontend
+      dockerfile: Dockerfile-frontend
     image: angular-reactive-tpd
     ports:
       - "4200:1827"
