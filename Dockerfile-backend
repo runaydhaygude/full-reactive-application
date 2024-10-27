@@ -1,10 +1,15 @@
 FROM  maven:3.8.1-jdk-11 AS builder
-COPY docker /usr/src/reactive-backend-1
 WORKDIR /usr/src/reactive-backend
-RUN ./mvnw.cmd clean package
+
+# Copy the pom.xml file and the source code
+COPY pom.xml ./
+COPY src ./src
+
+RUN mvn clean install -DskipTests=true
+
 
 FROM openjdk:11
 COPY --from=builder /usr/src/reactive-backend/target/reactive-web-1.0.0-SNAPSHOT.jar /usr/src/reactive-backend/
 WORKDIR /usr/src/reactive-backend
 EXPOSE 8080
-CMD ["java", "-jar", "reactive-backend-1.0.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "reactive-web-1.0.0-SNAPSHOT.jar"]

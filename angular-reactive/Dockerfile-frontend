@@ -1,9 +1,21 @@
 # Build stage
 FROM node:18.14.0 as build-stage
-#COPY ../docker /usr/src/
+
 WORKDIR /usr/src
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install application dependencies
 RUN npm install
-RUN npm run ng build --prod
+
+# Copy the application source code
+COPY . .
+
+# Build the Angular application
+RUN npm run build --prod
+
+
 
 # Compiled app based on nginx
 FROM nginx:1.19

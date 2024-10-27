@@ -36,3 +36,50 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+
+
+# angular-reactive frontend
+/angular-reactive/node_modules
+/angular-reactive/dist
+
+# Compiled output
+/angular-reactive/dist
+/angular-reactive/tmp
+/angular-reactive/out-tsc
+/angular-reactive/bazel-out
+
+# Node
+/angular-reactive/node_modules
+/angular-reactivenpm-debug.log
+/angular-reactive/yarn-error.log
+
+# IDEs and editors
+/angular-reactive/.idea/
+/angular-reactive/.project
+//angular-reactive/.classpath
+/angular-reactive/.c9/
+/angular-reactive/*.launch
+/angular-reactive/.settings/
+/angular-reactive/*.sublime-workspace
+
+# Visual Studio Code
+/angular-reactive/.vscode/*
+!/angular-reactive/.vscode/settings.json
+!/angular-reactive/.vscode/tasks.json
+!/angular-reactive/.vscode/launch.json
+!/angular-reactive/.vscode/extensions.json
+/angular-reactive/.history/*
+
+# Miscellaneous
+/angular-reactive/.angular/cache
+/angular-reactive/.sass-cache/
+/angular-reactive/connect.lock
+/angular-reactive/coverage
+/angular-reactive/libpeerconnection.log
+/angular-reactive/testem.log
+/angular-reactive/typings
+
+# System files
+/angular-reactive/.DS_Store
+/angular-reactive/Thumbs.db
